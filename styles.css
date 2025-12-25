@@ -1,0 +1,756 @@
+:root {
+  --black: #1c2a40;
+  --white: #a6c8e7;
+  --body: #c6a59c;
+  --eye-brow-highlight-side: #b5746a;
+  --eye-pupil: #141d2c;
+  --shadow-eye: #ca9c8c;
+  --main-nose-highlight: #cc9588;
+  --nose-middle-highlight: #d6baac;
+  --nose-side: #9f7066;
+  --nose-lower: #b67568;
+  --nose-hole: #4c3338;
+  --nose-top: #d2c5c0;
+  --nose-lower-part: #af7067;
+  --moustache: #8a7676;
+  --moustache-highlight: #765d5c;
+  --beard: #8a7676;
+  --lips: #c47776;
+  --lips-highlight: #ca8e97;
+  --hair: #1b2533;
+  --ear-over: #ae6457;
+  --ear-upper-dark: #a4796d;
+  --ear-lower-dark: #a4796d;
+  --ear-border: #cdaba1;
+  --over-upper: #ae6457;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background: var(--body);
+  min-height: 100vh;
+}
+
+div {
+  position: absolute;
+}
+
+.canvas {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.face {
+  width: 445px;
+  height: 760px;
+  transform: translateY(130px);
+}
+
+.left-part,
+.right-part {
+  height: 100%;
+  background: var(--body);
+}
+
+.left-part {
+  width: 51%;
+}
+
+.right-part {
+  width: 49%;
+  right: 0;
+  transform: scale(-1, 1);
+}
+
+.eye {
+  width: 65%;
+  height: 125px;
+  transform: translateY(-50%);
+  top: 47.5%;
+  right: 13%;
+}
+
+.eyebrow {
+  width: 91%;
+  left: 0;
+  top: 0;
+  height: 41%;
+}
+
+.first-eyebrow {
+  background: var(--black);
+  height: 60%;
+  width: 68%;
+  right: -1px;
+  top: 5px;
+  rotate: 6deg;
+  clip-path: polygon(0 0, 85% 0, 100% 100%, 0 85%);
+}
+
+.second-eyebrow {
+  background: var(--black);
+  width: 30px;
+  height: 37px;
+  top: 0;
+  left: 17px;
+  clip-path: polygon(0 57%, 100% 0, 100% 72%, 0% 100%);
+}
+
+.third-eyebrow {
+  background: var(--black);
+  width: 12%;
+  height: 30.5%;
+  bottom: 15px;
+  left: 12px;
+  rotate: 60deg;
+  clip-path: polygon(0 43%, 100% 0, 100% 100%, 50% 100%);
+}
+
+.fourth-eyebrow {
+  background: var(--black);
+  width: 6%;
+  height: 40%;
+  bottom: -1px;
+  left: 8px;
+  rotate: 28deg;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+}
+
+.object-eye {
+  width: 70%;
+  left: 10%;
+  top: 30%;
+  height: 60%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 5px;
+}
+
+.eye-white {
+  background: var(--white);
+  width: 92%;
+  transform: translate(1px);
+  height: 48%;
+  bottom: 0;
+  border-radius: 60% 60% 40% 40%;
+}
+
+.eye-center {
+  width: 39px;
+  height: 37px;
+  background-color: var(--black);
+  border-radius: 50%;
+  transform: translate(1px, 1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eye-pupil {
+  width: 14px;
+  height: 14px;
+  background-color: var(--eye-pupil);
+  border-radius: 50%;
+}
+
+.inner-eye {
+  position: relative;
+  bottom: 22%;
+  right: 24%;
+  width: 18%;
+  height: 10%;
+  background: var(--white);
+  border-radius: 50%;
+}
+
+.shadow-eye {
+  background: var(--shadow-eye);
+  width: 100px;
+  right: -33px;
+  height: 20px;
+  top: 38px;
+  clip-path: polygon(
+    19% 75%,
+    0% 0%,
+    21% 20%,
+    50% 26%,
+    72% 20%,
+    100% 0%,
+    80% 75%,
+    48% 100%
+  );
+}
+
+.upper-circle {
+  background: black;
+  width: 100%;
+  height: 20%;
+  left: 2px;
+  border-radius: 100% 100% 0 0;
+  top: 40px;
+  clip-path: polygon(
+    31% 30%,
+    0 100%,
+    21% 20%,
+    50% 0,
+    72% 20%,
+    100% 100%,
+    63% 30%,
+    50% 22%
+  );
+}
+
+.bg {
+}
+
+.eye-left-eyebrow {
+  background: black;
+  width: 10%;
+  height: 20%;
+  left: 10px;
+  bottom: 10px;
+  clip-path: polygon(
+    0% 100%,
+    30% 63%,
+    33% 38%,
+    26% 19%,
+    0% 0%,
+    40% 14%,
+    58% 28%,
+    59% 51%,
+    60% 62%,
+    100% 75%,
+    51% 79%
+  );
+  transform: scaleX(-1);
+}
+
+.upper-highlight {
+  background: var(--eye-brow-highlight-side);
+  width: 18%;
+  height: 10%;
+  top: 58%;
+  left: 8px;
+  rotate: -38deg;
+  clip-path: polygon(
+    0 82%,
+    18% 58%,
+    33% 32%,
+    74% 8%,
+    100% 0%,
+    100% 100%,
+    52% 84%
+  );
+}
+
+.upper-line-other {
+  width: 50%;
+  height: 10px;
+  top: 39%;
+  left: 37px;
+  background: var(--black);
+  transform: scaleX(-1);
+  rotate: -1deg;
+  clip-path: polygon(
+    0% 60%,
+    8% 45%,
+    18% 35%,
+    35% 30%,
+    55% 32%,
+    72% 40%,
+    85% 50%,
+    100% 65%,
+    100% 80%,
+    85% 70%,
+    70% 62%,
+    55% 58%,
+    35% 56%,
+    18% 58%,
+    8% 62%,
+    0% 75%
+  );
+}
+
+.upper-line {
+  width: 20%;
+  height: 10px;
+  top: 48%;
+  left: 12px;
+  background: var(--black);
+  rotate: -50deg;
+  clip-path: polygon(
+    18% 35%,
+    35% 30%,
+    55% 32%,
+    72% 40%,
+    85% 50%,
+    100% 65%,
+    100% 80%,
+    85% 70%,
+    70% 62%,
+    55% 58%,
+    35% 56%,
+    18% 58%,
+    8% 62%,
+    0% 75%
+  );
+}
+
+.lower-line {
+  overflow: hidden;
+  width: 28px;
+  height: 8px;
+  top: 16px;
+  left: -10px;
+  z-index: 20;
+  transform: translate(26px, 96px) rotate(12deg);
+}
+
+.lower-line::after {
+  position: absolute;
+  content: "";
+  width: 120%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid var(--black);
+  top: -7px;
+  left: 4px;
+}
+
+.eye-brow-highlight-first {
+  background: var(--eye-brow-highlight-side);
+  height: 70px;
+  width: 65px;
+  right: 1px;
+  top: 15px;
+  right: 14px;
+  rotate: -21deg;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 57% 100%);
+}
+
+.eye-brow-highlight-second {
+  background: var(--eye-brow-highlight-side);
+  width: 14px;
+  height: 30px;
+  right: 1px;
+  top: 65px;
+  rotate: -5deg;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 86% 100%);
+}
+
+.nose {
+  width: 60px;
+  height: 147px;
+  right: 0;
+  bottom: 235px;
+}
+
+.main-nose-highlight {
+  background: var(--main-nose-highlight);
+  width: 75%;
+  height: 80%;
+  left: 3px;
+  clip-path: polygon(
+    60% 0,
+    100% 0,
+    100% 20%,
+    100% 100%,
+    50% 100%,
+    0 100%,
+    0 63%
+  );
+}
+
+.nose-middle-highlight {
+  background: var(--nose-middle-highlight);
+  width: 100%;
+  height: 100%;
+  right: 0;
+  top: 0;
+  clip-path: polygon(
+    65% 0,
+    100% 0%,
+    100% 20%,
+    100% 87%,
+    55% 93%,
+    0% 100%,
+    8% 73%,
+    65% 60%
+  );
+
+  -webkit-mask-image: linear-gradient(to left, black 80%, transparent 99%);
+  mask-image: linear-gradient(to left, black 80%, transparent 99%);
+}
+
+.nose-top {
+  background: var(--nose-top);
+  bottom: 20px;
+  right: 0;
+  width: 30px;
+  height: 42px;
+  clip-path: polygon(
+    0 100%,
+    17% 51%,
+    31% 24%,
+    55% 6%,
+    100% 0,
+    100% 32%,
+    100% 100%
+  );
+  z-index: 1;
+
+  -webkit-mask-image: linear-gradient(to left, black 50%, transparent 99%);
+  mask-image: linear-gradient(to left, black 50%, transparent 99%);
+}
+
+.nose-top::after {
+  background: var(--nose-top);
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 10px;
+  height: 19px;
+
+  -webkit-mask-image: linear-gradient(to left, black 50%, transparent 99%);
+  mask-image: linear-gradient(to left, black 50%, transparent 99%);
+}
+
+.nose-side {
+  width: 66%;
+  height: 23%;
+  left: 0;
+  bottom: 0px;
+  transform: skewX(-7deg);
+  border-left: 1px solid var(--nose-lower);
+  border-radius: 2% 0 0 30%;
+}
+
+.nose-side-inner {
+  width: 66%;
+  height: 18%;
+  right: -16px;
+  bottom: 23px;
+  transform: skewX(-7deg);
+  border-left: 1px solid var(--nose-lower);
+}
+
+.nose-lower {
+  background: var(--nose-lower);
+  width: 100%;
+  height: 40px;
+  bottom: -20px;
+  border-radius: 0 0 0 20%;
+  clip-path: polygon(
+    0 31%,
+    57% 0,
+    75% 35%,
+    100% 69%,
+    100% 87%,
+    87% 82%,
+    25% 94%,
+    12% 88%,
+    0 79%
+  );
+}
+
+.nose-hole {
+  background: var(--nose-hole);
+  width: 50%;
+  height: 50%;
+  top: 12px;
+  right: 10px;
+  clip-path: polygon(50% 66%, 12% 74%, 8% 35%, 0 0, 46% 23%, 70% 39%, 100% 80%);
+}
+
+.nose-hole-inner {
+  bottom: 65%;
+  right: 45%;
+  width: 18%;
+  height: 10%;
+  background: var(--black);
+  border-radius: 50%;
+}
+
+.nose-lower-part {
+  background: var(--nose-lower-part);
+  bottom: -25px;
+  right: 0;
+  width: 15px;
+  height: 12px;
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 76% 100%, 0% 0%);
+  z-index: 1;
+}
+
+.nose-lower-part::after {
+  background: var(--nose-lower-part);
+  content: "";
+  position: absolute;
+  top: 1.2px;
+  bottom: 0;
+  width: 10px;
+  height: 19px;
+}
+
+.moustache {
+  background: var(--moustache);
+  width: 110px;
+  height: 140px;
+  bottom: 80px;
+  right: 0;
+  clip-path: polygon(8% 34%, 89% 0%, 100% 0%, 100% 100%, 0% 100%, 4% 40%);
+}
+
+.moustache-cut-first {
+  background: var(--body);
+  width: 87%;
+  height: 70%;
+  right: -2px;
+  bottom: 0;
+  clip-path: polygon(78% 0%, 100% 7%, 100% 50%, 100% 100%, 0% 100%, 4% 40%);
+}
+
+.moustache-highlight {
+  background: var(--moustache-highlight);
+  width: 10px;
+  border-radius: 90%;
+  height: 50px;
+  bottom: 75px;
+  rotate: 17deg;
+  right: 8px;
+}
+
+.lips {
+  width: 85px;
+  height: 69px;
+  bottom: 95px;
+  right: 0;
+}
+
+.upper-lips {
+  width: 100%;
+  height: 50%;
+  background: var(--lips);
+  top: 0;
+  clip-path: polygon(77% 0, 100% 51%, 100% 100%, 0% 75%, 0% 65%);
+}
+
+.lower-lips {
+  width: 90%;
+  right: 0;
+  height: 48%;
+  bottom: 8px;
+  background: var(--lips);
+  border-radius: 0 0 0 90%;
+}
+
+.lip-divider {
+  background: black;
+  width: 100%;
+  height: 40px;
+  bottom: 6px;
+  clip-path: polygon(
+    30% 19%,
+    0% 5%,
+    30% 15%,
+    73% 18%,
+    90% 28%,
+    100% 28%,
+    100% 31%,
+    89% 31%,
+    73% 22%
+  );
+}
+
+.lips-highlight {
+  background: var(--lips-highlight);
+  right: 0;
+  width: 55%;
+  height: 40%;
+  top: 75%;
+  transform: translateY(-50%);
+  clip-path: polygon(0% 8%, 8% 0%, 61% 6%, 100% 7%, 100% 68%, 58% 65%, 22% 42%);
+}
+
+.beard {
+  background: var(--beard);
+  width: 86%;
+  height: 40%;
+  top: 62%;
+  bottom: 0;
+  right: 0;
+  clip-path: polygon(
+    4% 15%,
+    0% 0%,
+    10% 23%,
+    71% 78%,
+    81% 78%,
+    90% 72%,
+    80% 63%,
+    100% 63%,
+    100% 100%,
+    67% 95%,
+    26% 68%,
+    11% 47%
+  );
+}
+
+.hair {
+  width: 100%;
+  height: 61%;
+  top: 0;
+}
+
+.left-hair-bottom {
+  bottom: 6px;
+  background: var(--hair);
+  width: 100%;
+  height: 48%;
+  clip-path: polygon(
+    3% 0%,
+    29% 0%,
+    31% 24%,
+    21% 41%,
+    14% 83%,
+    12% 92%,
+    11% 85%,
+    11% 73%,
+    6% 68%,
+    1% 15%
+  );
+}
+
+.left-hair-top {
+  background: var(--hair);
+  width: 100%;
+  height: 51%;
+  top: 0;
+  clip-path: polygon(
+    12% 57%,
+    26% 50%,
+    37% 27%,
+    64% 9%,
+    56% 23%,
+    100% 4%,
+    100% 24%,
+    100% 33%,
+    100% 70%,
+    55% 71%,
+    44% 79%,
+    29% 100%,
+    3% 100%,
+    0% 84%,
+    14% 69%
+  );
+}
+
+.right-hair-top {
+  background: var(--hair);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  transform: scaleX(-1);
+  transform-origin: center;
+  clip-path: polygon(
+    0 2%,
+    9% 0,
+    8% 7%,
+    28% 5%,
+    70% 11%,
+    81% 19%,
+    66% 14%,
+    92% 28%,
+    93% 48%,
+    99% 55%,
+    97% 83%,
+    91% 87%,
+    90% 100%,
+    83% 84%,
+    84% 72%,
+    72% 54%,
+    73% 61%,
+    62% 42%,
+    32% 36%,
+    32% 36%,
+    0% 35.7%,
+    0% 13%
+  );
+}
+
+.ear {
+  width: 41px;
+  height: 157px;
+  top: 51%;
+  left: 0;
+}
+
+.ear-border {
+  width: 100%;
+  height: 100%;
+  background: var(--ear-border);
+  clip-path: polygon(
+    0% 0%,
+    33% 0%,
+    62% 9%,
+    62% 42%,
+    100% 100%,
+    33% 87%,
+    21% 54%,
+    0% 18%
+  );
+}
+
+.ear-over {
+  background: var(--ear-over);
+  width: 25px;
+  height: 49px;
+  right: -4px;
+  top: 64px;
+  border-radius: 50px 0 0 50px;
+}
+
+.ear-upper-dark {
+  background: var(--ear-upper-dark);
+  width: 20px;
+  height: 45px;
+  top: 16px;
+  left: 9px;
+  clip-path: polygon(0% 0%, 0% 0%, 100% 45%, 100% 91%, 35% 25%, 0% 100%);
+}
+
+.over-upper {
+  background: var(--over-upper);
+  width: 130%;
+  height: 8px;
+  rotate: 50deg;
+  left: -3px;
+  top: 3px;
+}
+
+.ear-lower-dark {
+  background: var(--ear-lower-dark);
+  width: 100%;
+  height: 40%;
+  bottom: 0;
+  clip-path: polygon(32% 22%, 97% 53%, 99% 100%, 20% 64%);
+}
+
+.over-lower {
+  background: var(--body);
+  width: 86%;
+  height: 16%;
+  top: 59%;
+  border-radius: 40%;
+  rotate: 30deg;
+  left: 40%;
+}
